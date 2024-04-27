@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block start %}
+    <h1>Here's the list of people (my age) I care about</h1>
+    <table>
+        <tr>
+            <td>S. no.</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>My age</td>
+        </tr>
+        {% for person in people %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{person.name}}</td>
+            <td>{{person.age}}</td>
+            <td {% if person.age == 22 %} style="background-color: green;" {% else %} style="background-color: red;" {% endif %}>
+                {% if person.age == 22 %}
+                👍
+                {% else %}
+                👎
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/home/contact/">CONTACT</a>
+    <br>
+    <a href="/home/about/">ABOUT</a>
+
+{% endblock %}
