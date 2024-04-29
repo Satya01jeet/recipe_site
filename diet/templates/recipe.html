@@ -17,7 +17,7 @@
           <label for="Recipe_name" class="form-label">Recipe Image</label>
           <input type="file" class="form-control" name="image">
         </div>
-      <button type="submit" class="btn btn-success">Add</button>
+      <button type="submit" class="btn btn-success m-1">Add</button>
   </form>
   <div class="col-6 mx-auto my-2 card p-3 shadow-lg">
     <table class="table table-striped">
@@ -37,7 +37,10 @@
           <td>{{recipe.name}}</td>
           <td>{{recipe.description}}</td>
           <td> <img src="/media/{{recipe.image}}" style="width: 100px; height: 100px"></td>
-          <td><a href= "/delete_recipes/{{recipe.id}}" class="btn btn-danger" >💀</a></td>
+          <td>
+            <a href= "/delete_recipes/{{recipe.id}}" class="btn btn-danger m-1" >Delete</a>
+            <a href="/update_recipe/{{recipe.id}}" class="btn btn-primary m-1">Update</a>
+          </td>
         </tr>
         {% endfor %}
       </tbody>

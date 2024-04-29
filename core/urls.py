@@ -24,9 +24,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),
+    path('', recipe, name='recipe'),
     path('recipes/', recipe, name='recipe'),
     path('delete_recipes/<id>', delete_recipe, name='delete_recipe'),
+    path('update_recipe/<id>', update_recipe, name='update_recipe'),
     path('home/about/', about, name='about'),
     path('home/contact/', contact, name='contact'),
 ]
